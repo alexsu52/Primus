@@ -1,0 +1,489 @@
+[2026-04-14 16:33:26] [NODE-?(amd-jump)] [INFO] [main] Loaded config: /home/amd/mbzuai_shared/Primus/prod_fp8.yaml
+[2026-04-14 16:33:26] [NODE-?(amd-jump)] [INFO] [main] Would execute: bash /home/amd/mbzuai_shared/Primus/runner/primus-cli-slurm.sh --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml -p mbzuai_training -N 2 --nodelist=k20u37,j16u31 -- preflight
+[2026-04-14 16:33:26] [NODE-?(amd-jump)] [INFO] [main] Executing: bash /home/amd/mbzuai_shared/Primus/runner/primus-cli-slurm.sh --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml -p mbzuai_training -N 2 --nodelist=k20u37,j16u31 -- preflight
+[2026-04-14 16:33:26] [NODE-?(amd-jump)] [INFO] -----------------------------------------------
+[2026-04-14 16:33:26] [NODE-?(amd-jump)] [INFO] primus-cli-slurm.sh
+[2026-04-14 16:33:26] [NODE-?(amd-jump)] [INFO] -----------------------------------------------
+[2026-04-14 16:33:26] [NODE-?(amd-jump)] [INFO] [slurm] Loaded config: /home/amd/mbzuai_shared/Primus/prod_fp8.yaml
+[2026-04-14 16:33:26] [NODE-?(amd-jump)] [INFO] [slurm] Executing: srun -t 24:00:00 -p mbzuai_training -N 2 --nodelist=k20u37,j16u31 /home/amd/mbzuai_shared/Primus/runner/primus-cli-slurm-entry.sh --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml -- preflight
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] -----------------------------------------------
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] primus-cli-slurm-entry.sh
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] -----------------------------------------------
+PRE_PARSE_ARGS: -- preflight
+PRE_PARSE_ARGS: -- preflight
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [slurm-entry] Loaded config: /home/amd/mbzuai_shared/Primus/prod_fp8.yaml
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [slurm-entry] MASTER_ADDR=j16u31
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [slurm-entry] MASTER_PORT=1234
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [slurm-entry] NNODES=2
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [slurm-entry] NODE_RANK=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [slurm-entry] GPUS_PER_NODE=8
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [slurm-entry] NODE_LIST: j16u31 k20u37
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [slurm-entry] Would execute: bash /home/amd/mbzuai_shared/Primus/runner/primus-cli-container.sh --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml --env MASTER_ADDR=j16u31 --env MASTER_PORT=1234 --env NNODES=2 --env NODE_RANK=0 --env GPUS_PER_NODE=8 preflight
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [slurm-entry] Executing command...
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] -----------------------------------------------
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] primus-cli-container.sh
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] -----------------------------------------------
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Loaded config: /home/amd/mbzuai_shared/Primus/prod_fp8.yaml
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] CLI: options.env += MASTER_ADDR=j16u31
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] CLI: options.env += MASTER_PORT=1234
+[2026-04-14 16:33:27] [NODE-1(k20u37)] [INFO] [container] Executing command...
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] CLI: options.env += NNODES=2
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] CLI: options.env += NODE_RANK=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] CLI: options.env += GPUS_PER_NODE=8
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Validating configuration...
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Parameter validation passed
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Converting configuration to container options...
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Final image: alexsu52/tasimage-primus:pr-609-fixed-rdma
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added project root volume: /home/amd/mbzuai_shared/Primus
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added cumulative: --cap-add SYS_PTRACE
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added cumulative: --cap-add CAP_SYS_ADMIN
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added option: --ulimit nofile=1048576:1048576
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added option: --group-add video
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added option (last): --env GPUS_PER_NODE=8
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added option: --ipc host
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added option: --security-opt seccomp=unconfined
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added option: --network host
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added boolean flag: --privileged
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added option: --volume /home/amd:/home/amd
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added cumulative: --device /dev/kfd
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added cumulative: --device /dev/dri
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added cumulative: --device /dev/infiniband
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added option: --name primus-training
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Added option: --shm-size 128G
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Launching container with the following configuration:
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     Runtime: docker
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     Image: alexsu52/tasimage-primus:pr-609-fixed-rdma
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     Container options:
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         -v /home/amd/mbzuai_shared/Primus:/home/amd/mbzuai_shared/Primus
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --cap-add SYS_PTRACE
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --cap-add CAP_SYS_ADMIN
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --ulimit nofile=1048576:1048576
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --group-add video
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --env GPUS_PER_NODE=8
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --ipc host
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --security-opt seccomp=unconfined
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --network host
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --privileged
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --volume /home/amd:/home/amd
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --device /dev/kfd
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --device /dev/dri
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --device /dev/infiniband
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --name primus-training
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]         --shm-size 128G
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     Args: --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml --env MASTER_ADDR=j16u31 --env MASTER_PORT=1234 --env NNODES=2 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env REBUILD_PRIMUS_TURBO=0 --env HSA_NO_SCRATCH_RECLAIM=1 --env NVTE_CK_USES_BWD_V3=1 --env NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0 --env NCCL_SOCKET_IFNAME=enp159s0np0 --env GLOO_SOCKET_IFNAME=enp159s0np0 --env TP_SOCKET_IFNAME=enp159s0np0 --env NCCL_IB_GID_INDEX=3 --env PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1 --env NVTE_CK_IS_V3_ATOMIC_FP32=1 --env TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600 --env GPU_ARCHS=gfx942 --env FIX_AITER_ASM_DIR=1 --env PRIMUS_TURBO_DEEPEP_TIMEOUT=1200 --env PRIMUS_TURBO_DEEPEP_CPU_TIMEOUT=1200 --env TRANSFORMERS_OFFLINE=1 --env HF_DATASETS_OFFLINE=1 --env PRIMUS_TOKENIZED_DATA_PATH=/home/amd/datasets/c4_deepseek_subset/c4_deepseek_subset_text_document --env MASTER_ADDR=j16u31 --env MASTER_PORT=1234 --env NNODES=2 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env PRIMUS_LOG_COLOR=0 --env PRIMUS_LOG_LEVEL=INFO --env PRIMUS_LOG_TIMESTAMP=1 preflight
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Would execute: docker run --rm -v /home/amd/mbzuai_shared/Primus:/home/amd/mbzuai_shared/Primus --cap-add SYS_PTRACE --cap-add CAP_SYS_ADMIN --ulimit nofile=1048576:1048576 --group-add video --env GPUS_PER_NODE=8 --ipc host --security-opt seccomp=unconfined --network host --privileged --volume /home/amd:/home/amd --device /dev/kfd --device /dev/dri --device /dev/infiniband --name primus-training --shm-size 128G alexsu52/tasimage-primus:pr-609-fixed-rdma /bin/bash -c     echo [container 0][INFO]: started at $(date +%Y.%m.%d) $(date +%H:%M:%S) &&     [[ -d /home/amd/mbzuai_shared/Primus ]] || { echo '[container 0][ERROR]: Primus not found at /home/amd/mbzuai_shared/Primus' >&2; exit 42; } &&     cd /home/amd/mbzuai_shared/Primus && bash runner/primus-cli-direct.sh "$@" 2>&1 &&     echo [container 0][INFO]: finished at $(date +%Y.%m.%d) $(date +%H:%M:%S) bash --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml --env MASTER_ADDR=j16u31 --env MASTER_PORT=1234 --env NNODES=2 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env REBUILD_PRIMUS_TURBO=0 --env HSA_NO_SCRATCH_RECLAIM=1 --env NVTE_CK_USES_BWD_V3=1 --env NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0 --env NCCL_SOCKET_IFNAME=enp159s0np0 --env GLOO_SOCKET_IFNAME=enp159s0np0 --env TP_SOCKET_IFNAME=enp159s0np0 --env NCCL_IB_GID_INDEX=3 --env PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1 --env NVTE_CK_IS_V3_ATOMIC_FP32=1 --env TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600 --env GPU_ARCHS=gfx942 --env FIX_AITER_ASM_DIR=1 --env PRIMUS_TURBO_DEEPEP_TIMEOUT=1200 --env PRIMUS_TURBO_DEEPEP_CPU_TIMEOUT=1200 --env TRANSFORMERS_OFFLINE=1 --env HF_DATASETS_OFFLINE=1 --env PRIMUS_TOKENIZED_DATA_PATH=/home/amd/datasets/c4_deepseek_subset/c4_deepseek_subset_text_document --env MASTER_ADDR=j16u31 --env MASTER_PORT=1234 --env NNODES=2 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env PRIMUS_LOG_COLOR=0 --env PRIMUS_LOG_LEVEL=INFO --env PRIMUS_LOG_TIMESTAMP=1 preflight
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [container] Executing command...
+[container 1][INFO]: started at 2026.04.14 16:33:27
+[2026-04-14 16:33:27] [NODE-?(k20u37)] [INFO] -----------------------------------------------
+[2026-04-14 16:33:27] [NODE-?(k20u37)] [INFO] primus-cli-direct.sh
+[2026-04-14 16:33:27] [NODE-?(k20u37)] [INFO] -----------------------------------------------
+[container 0][INFO]: started at 2026.04.14 16:33:27
+[2026-04-14 16:33:27] [NODE-?(j16u31)] [INFO] -----------------------------------------------
+[2026-04-14 16:33:27] [NODE-?(j16u31)] [INFO] primus-cli-direct.sh
+[2026-04-14 16:33:27] [NODE-?(j16u31)] [INFO] -----------------------------------------------
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] PRE_PARSE_ARGS (runner options): --env MASTER_ADDR=j16u31 --env MASTER_PORT=1234 --env NNODES=2 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env REBUILD_PRIMUS_TURBO=0 --env HSA_NO_SCRATCH_RECLAIM=1 --env NVTE_CK_USES_BWD_V3=1 --env NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0 --env NCCL_SOCKET_IFNAME=enp159s0np0 --env GLOO_SOCKET_IFNAME=enp159s0np0 --env TP_SOCKET_IFNAME=enp159s0np0 --env NCCL_IB_GID_INDEX=3 --env PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1 --env NVTE_CK_IS_V3_ATOMIC_FP32=1 --env TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600 --env GPU_ARCHS=gfx942 --env FIX_AITER_ASM_DIR=1 --env PRIMUS_TURBO_DEEPEP_TIMEOUT=1200 --env PRIMUS_TURBO_DEEPEP_CPU_TIMEOUT=1200 --env TRANSFORMERS_OFFLINE=1 --env HF_DATASETS_OFFLINE=1 --env PRIMUS_TOKENIZED_DATA_PATH=/home/amd/datasets/c4_deepseek_subset/c4_deepseek_subset_text_document --env MASTER_ADDR=j16u31 --env MASTER_PORT=1234 --env NNODES=2 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env PRIMUS_LOG_COLOR=0 --env PRIMUS_LOG_LEVEL=INFO --env PRIMUS_LOG_TIMESTAMP=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] PRIMUS_ARGS (python module args): preflight
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] Combined args for second pass: --env MASTER_ADDR=j16u31 --env MASTER_PORT=1234 --env NNODES=2 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env REBUILD_PRIMUS_TURBO=0 --env HSA_NO_SCRATCH_RECLAIM=1 --env NVTE_CK_USES_BWD_V3=1 --env NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0 --env NCCL_SOCKET_IFNAME=enp159s0np0 --env GLOO_SOCKET_IFNAME=enp159s0np0 --env TP_SOCKET_IFNAME=enp159s0np0 --env NCCL_IB_GID_INDEX=3 --env PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1 --env NVTE_CK_IS_V3_ATOMIC_FP32=1 --env TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600 --env GPU_ARCHS=gfx942 --env FIX_AITER_ASM_DIR=1 --env PRIMUS_TURBO_DEEPEP_TIMEOUT=1200 --env PRIMUS_TURBO_DEEPEP_CPU_TIMEOUT=1200 --env TRANSFORMERS_OFFLINE=1 --env HF_DATASETS_OFFLINE=1 --env PRIMUS_TOKENIZED_DATA_PATH=/home/amd/datasets/c4_deepseek_subset/c4_deepseek_subset_text_document --env MASTER_ADDR=j16u31 --env MASTER_PORT=1234 --env NNODES=2 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env PRIMUS_LOG_COLOR=0 --env PRIMUS_LOG_LEVEL=INFO --env PRIMUS_LOG_TIMESTAMP=1 -- preflight
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] Loaded config: /home/amd/mbzuai_shared/Primus/prod_fp8.yaml
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += MASTER_ADDR=j16u31
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += MASTER_PORT=1234
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += NNODES=2
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += NODE_RANK=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += GPUS_PER_NODE=8
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += REBUILD_PRIMUS_TURBO=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += HSA_NO_SCRATCH_RECLAIM=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += NVTE_CK_USES_BWD_V3=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += NCCL_SOCKET_IFNAME=enp159s0np0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += GLOO_SOCKET_IFNAME=enp159s0np0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += TP_SOCKET_IFNAME=enp159s0np0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += NCCL_IB_GID_INDEX=3
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += NVTE_CK_IS_V3_ATOMIC_FP32=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += GPU_ARCHS=gfx942
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += FIX_AITER_ASM_DIR=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += PRIMUS_TURBO_DEEPEP_TIMEOUT=1200
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += PRIMUS_TURBO_DEEPEP_CPU_TIMEOUT=1200
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += TRANSFORMERS_OFFLINE=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += HF_DATASETS_OFFLINE=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += PRIMUS_TOKENIZED_DATA_PATH=/home/amd/datasets/c4_deepseek_subset/c4_deepseek_subset_text_document
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += MASTER_ADDR=j16u31
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += MASTER_PORT=1234
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += NNODES=2
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += NODE_RANK=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += GPUS_PER_NODE=8
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += PRIMUS_LOG_COLOR=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += PRIMUS_LOG_LEVEL=INFO
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] [direct] CLI: env += PRIMUS_LOG_TIMESTAMP=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] ========== Training Cluster Info ==========
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     MASTER_ADDR=j16u31
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     MASTER_PORT=1234
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NNODES=2
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NODE_RANK=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     GPUS_PER_NODE=8
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] ========== Python Path and Data Paths ==========
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     PRIMUS_PATH=/home/amd/mbzuai_shared/Primus
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     DATA_PATH=/home/amd/mbzuai_shared/Primus/data
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     HF_HOME=/home/amd/mbzuai_shared/Primus/data/huggingface
+env.PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND=TURBO
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     PYTHONPATH=/home/amd/mbzuai_shared/Primus:/opt/venv/lib/python3.10/site-packages:
+[2026-04-14 16:33:27] [NODE-1(k20u37)] [INFO] USING_UEP is disabled. PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND set to TURBO
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] ========== NCCL and Network Settings ==========
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     HIP_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NCCL_DEBUG=<unset>
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NCCL_CHECKS_DISABLE=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NCCL_IB_GID_INDEX=3
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NCCL_CROSS_NIC=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     IP_INTERFACE=eno8303
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NCCL_SOCKET_IFNAME=enp159s0np0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     GLOO_SOCKET_IFNAME=enp159s0np0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] ========== RCCL Settings ==========
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     RCCL_MSCCL_ENABLE=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     RCCL_MSCCLPP_ENABLE=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     RCCL_MSCCLPP_FORCE_ENABLE=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     RCCL_MSCCLPP_THRESHOLD=1073741824
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     MSCCLPP_DISABLE_CHANNEL_CACHE=FALSE
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     TORCH_NCCL_USE_TENSOR_REGISTER_ALLOCATOR_HOOK=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] ========== AMD GPU Optimizations ==========
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     HSA_ENABLE_SDMA=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     HSA_NO_SCRATCH_RECLAIM=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] ========== General Performance Tuning ==========
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     GPU_MAX_HW_QUEUES=2
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     ENABLE_NUMA_BINDING=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     CUDA_DEVICE_MAX_CONNECTIONS=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     TORCH_NCCL_HIGH_PRIORITY=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NCCL_PXN_DISABLE=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NCCL_P2P_NET_CHUNKSIZE=524288
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] ========== Transformer Engine Optimizations ==========
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NVTE_USE_CAST_TRANSPOSE_TRITON=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NVTE_USE_OPTIMIZED_HIPIFIED_CAST_TRANSPOSE=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NVTE_CK_USES_BWD_V3=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NVTE_DEBUG=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NVTE_DEBUG_LEVEL=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     NVTE_FUSED_ATTN_LOG_CONFIG=0
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO]     PATCH_TE_FLASH_ATTN=0
+
+[2026-04-14 16:33:27] [NODE-0(j16u31)] [INFO] === Loading Primus Environment Configuration ===
+[fix_aiter_asm_dir] Patched /opt/venv/lib/python3.10/site-packages/aiter/jit/core.py: AITER_ASM_DIR -> .../hsa/gfx942/
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] Detected GPU model: MI300X
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] Loading GPU-specific configuration: /home/amd/mbzuai_shared/Primus/runner/helpers/envs/MI300X.sh
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] Loading MI300X-specific optimizations...
+
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] === Validating Configuration ===
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] ✓ Configuration validation passed
+
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] === Environment Configuration Complete ===
+
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Detected hooks directory: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/00_rebuild_primus_turbo.sh preflight
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/00_rebuild_primus_turbo.sh finished in 0s
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/01_patch_te_flash_attn_max_version.sh preflight
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/01_patch_te_flash_attn_max_version.sh finished in 0s
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/02_rebuild_bnxt.sh preflight
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/02_rebuild_bnxt.sh finished in 0s
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/03_detect_nccl_ib_tc.sh preflight
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/03_detect_nccl_ib_tc.sh finished in 0s
+WARNING: AMD GPU device(s) is/are in a low-power state. Check power control/runtime_status
+
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/03_enable_ainic.sh preflight
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/03_enable_ainic.sh finished in 0s
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/04_rebuild_uep.sh preflight
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/04_rebuild_uep.sh finished in 0s
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/05_using_uep.sh preflight
+env.PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND=TURBO
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] USING_UEP is disabled. PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND set to TURBO
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] exported env from hook: PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND=TURBO
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/05_using_uep.sh finished in 0s
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/06_fix_aiter_asm_dir.sh preflight
+[fix_aiter_asm_dir] Patched /opt/venv/lib/python3.10/site-packages/aiter/jit/core.py: AITER_ASM_DIR -> .../hsa/gfx942/
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/06_fix_aiter_asm_dir.sh finished in 0s
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/10_auto_nccl_net.sh preflight
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/10_auto_nccl_net.sh finished in 0s
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] No hook directory for [preflight/]
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [Hooks] All hooks executed successfully
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): MASTER_ADDR=j16u31
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): MASTER_PORT=1234
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): NNODES=2
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): NODE_RANK=0
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): GPUS_PER_NODE=8
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): REBUILD_PRIMUS_TURBO=0
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): HSA_NO_SCRATCH_RECLAIM=1
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): NVTE_CK_USES_BWD_V3=1
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): NCCL_SOCKET_IFNAME=enp159s0np0
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): GLOO_SOCKET_IFNAME=enp159s0np0
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): TP_SOCKET_IFNAME=enp159s0np0
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): NCCL_IB_GID_INDEX=3
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): NVTE_CK_IS_V3_ATOMIC_FP32=1
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): GPU_ARCHS=gfx942
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): FIX_AITER_ASM_DIR=1
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): PRIMUS_TURBO_DEEPEP_TIMEOUT=1200
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): PRIMUS_TURBO_DEEPEP_CPU_TIMEOUT=1200
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): TRANSFORMERS_OFFLINE=1
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): HF_DATASETS_OFFLINE=1
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): PRIMUS_TOKENIZED_DATA_PATH=/home/amd/datasets/c4_deepseek_subset/c4_deepseek_subset_text_document
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): MASTER_ADDR=j16u31
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): MASTER_PORT=1234
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): NNODES=2
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): NODE_RANK=0
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): GPUS_PER_NODE=8
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): PRIMUS_LOG_COLOR=0
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): PRIMUS_LOG_LEVEL=INFO
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] Exported env (final): PRIMUS_LOG_TIMESTAMP=1
+[2026-04-14 16:33:28] [NODE-0(j16u31)] [INFO] [direct] NUMA binding: AUTO (default OFF)
+
+==========================================
+  Primus Direct Launch Configuration
+==========================================
+  Run Mode        : torchrun
+  Script Path     : primus/cli/main.py
+  Config File     : /home/amd/mbzuai_shared/Primus/prod_fp8.yaml
+  Log File        : logs/log_20260414_163327.txt
+  NUMA Binding    : auto
+  Patch Scripts   : <none>
+  Primus Args     : preflight
+
+  Environment Variables:
+    MASTER_ADDR=j16u31
+    MASTER_PORT=1234
+    NNODES=2
+    NODE_RANK=0
+    GPUS_PER_NODE=8
+    REBUILD_PRIMUS_TURBO=0
+    HSA_NO_SCRATCH_RECLAIM=1
+    NVTE_CK_USES_BWD_V3=1
+    NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0
+    NCCL_SOCKET_IFNAME=enp159s0np0
+    GLOO_SOCKET_IFNAME=enp159s0np0
+    TP_SOCKET_IFNAME=enp159s0np0
+    NCCL_IB_GID_INDEX=3
+    PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1
+    NVTE_CK_IS_V3_ATOMIC_FP32=1
+    TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600
+    GPU_ARCHS=gfx942
+    FIX_AITER_ASM_DIR=1
+    PRIMUS_TURBO_DEEPEP_TIMEOUT=1200
+    PRIMUS_TURBO_DEEPEP_CPU_TIMEOUT=1200
+    TRANSFORMERS_OFFLINE=1
+    HF_DATASETS_OFFLINE=1
+    PRIMUS_TOKENIZED_DATA_PATH=/home/amd/datasets/c4_deepseek_subset/c4_deepseek_subset_text_document
+    MASTER_ADDR=j16u31
+    MASTER_PORT=1234
+    NNODES=2
+    NODE_RANK=0
+    GPUS_PER_NODE=8
+    PRIMUS_LOG_COLOR=0
+    PRIMUS_LOG_LEVEL=INFO
+    PRIMUS_LOG_TIMESTAMP=1
+
+  Distributed Settings:
+    NNODES          : 2
+    NODE_RANK       : 0
+    GPUS_PER_NODE   : 8
+    MASTER_ADDR     : j16u31
+    MASTER_PORT     : 1234
+
+========== System Information ==========
+    Hostname: j16u31
+    Kernel: 6.8.0-106-generic
+    CPUs: 112
+    Memory: 2015 GB
+    Container: Yes
+    Slurm Job: No
+WARNING: AMD GPU device(s) is/are in a low-power state. Check power control/runtime_status
+
+    GPUs: 8
+  Full Command:
+    Executing: torchrun --nproc_per_node 8 --nnodes 2 --node_rank 0 --master_addr j16u31 --master_port 1234 --local-ranks-filter 0  primus/cli/main.py preflight 2>&1 | tee logs/log_20260414_163327.txt
+
+==========================================
+  
+==========================================
+W0414 16:33:34.961000 119 torch/distributed/run.py:853] 
+W0414 16:33:34.961000 119 torch/distributed/run.py:853] *****************************************
+W0414 16:33:34.961000 119 torch/distributed/run.py:853] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0414 16:33:34.961000 119 torch/distributed/run.py:853] *****************************************
+W0414 16:33:35.835000 413 torch/distributed/run.py:853] 
+W0414 16:33:35.835000 413 torch/distributed/run.py:853] *****************************************
+W0414 16:33:35.835000 413 torch/distributed/run.py:853] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0414 16:33:35.835000 413 torch/distributed/run.py:853] *****************************************
+[Primus:Preflight] checks=host,gpu,network host=j16u31 status=OK
+[Primus:Preflight] checks=host,gpu,network host=k20u37 status=OK
+✅ PDF Report saved to: output/preflight/preflight_report.pdf
+W0414 16:34:12.723000 119 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 187 closing signal SIGTERM
+W0414 16:34:12.724000 119 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 188 closing signal SIGTERM
+W0414 16:34:12.724000 119 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 189 closing signal SIGTERM
+W0414 16:34:12.724000 119 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 191 closing signal SIGTERM
+W0414 16:34:12.725000 119 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 192 closing signal SIGTERM
+W0414 16:34:12.725000 119 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 193 closing signal SIGTERM
+W0414 16:34:12.726000 119 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 194 closing signal SIGTERM
+W0414 16:34:12.740000 413 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 482 closing signal SIGTERM
+W0414 16:34:12.740000 413 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 483 closing signal SIGTERM
+W0414 16:34:12.741000 413 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 484 closing signal SIGTERM
+W0414 16:34:12.741000 413 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 486 closing signal SIGTERM
+W0414 16:34:12.742000 413 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 487 closing signal SIGTERM
+W0414 16:34:12.742000 413 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 488 closing signal SIGTERM
+W0414 16:34:12.742000 413 torch/distributed/elastic/multiprocessing/api.py:1004] Sending process 489 closing signal SIGTERM
+E0414 16:34:13.191000 119 torch/distributed/elastic/multiprocessing/api.py:978] failed (exitcode: 2) local_rank: 3 (pid: 190) of binary: /opt/venv/bin/python
+Traceback (most recent call last):
+  File "/opt/venv/bin/torchrun", line 33, in <module>
+    sys.exit(load_entry_point('torch', 'console_scripts', 'torchrun')())
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 362, in wrapper
+    return f(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/run.py", line 992, in main
+    run(args)
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/run.py", line 983, in run
+    elastic_launch(
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 319, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+primus/cli/main.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-04-14_16:34:13
+  host      : k20u37
+  rank      : 8 (local_rank: 0)
+  exitcode  : -15 (pid: 187)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 187
+[2]:
+  time      : 2026-04-14_16:34:13
+  host      : k20u37
+  rank      : 9 (local_rank: 1)
+  exitcode  : -15 (pid: 188)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 188
+[3]:
+  time      : 2026-04-14_16:34:13
+  host      : k20u37
+  rank      : 10 (local_rank: 2)
+  exitcode  : -15 (pid: 189)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 189
+[4]:
+  time      : 2026-04-14_16:34:13
+  host      : k20u37
+  rank      : 12 (local_rank: 4)
+  exitcode  : -15 (pid: 191)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 191
+[5]:
+  time      : 2026-04-14_16:34:13
+  host      : k20u37
+  rank      : 13 (local_rank: 5)
+  exitcode  : -15 (pid: 192)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 192
+[6]:
+  time      : 2026-04-14_16:34:13
+  host      : k20u37
+  rank      : 14 (local_rank: 6)
+  exitcode  : -15 (pid: 193)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 193
+[7]:
+  time      : 2026-04-14_16:34:13
+  host      : k20u37
+  rank      : 15 (local_rank: 7)
+  exitcode  : -15 (pid: 194)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 194
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-14_16:34:12
+  host      : k20u37
+  rank      : 11 (local_rank: 3)
+  exitcode  : 2 (pid: 190)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+E0414 16:34:13.230000 413 torch/distributed/elastic/multiprocessing/api.py:978] failed (exitcode: 2) local_rank: 3 (pid: 485) of binary: /opt/venv/bin/python
+Traceback (most recent call last):
+  File "/opt/venv/bin/torchrun", line 33, in <module>
+    sys.exit(load_entry_point('torch', 'console_scripts', 'torchrun')())
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 362, in wrapper
+    return f(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/run.py", line 992, in main
+    run(args)
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/run.py", line 983, in run
+    elastic_launch(
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/opt/venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 319, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+primus/cli/main.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-04-14_16:34:13
+  host      : j16u31
+  rank      : 0 (local_rank: 0)
+  exitcode  : -15 (pid: 482)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 482
+[2]:
+  time      : 2026-04-14_16:34:13
+  host      : j16u31
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 483)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 483
+[3]:
+  time      : 2026-04-14_16:34:13
+  host      : j16u31
+  rank      : 2 (local_rank: 2)
+  exitcode  : -15 (pid: 484)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 484
+[4]:
+  time      : 2026-04-14_16:34:13
+  host      : j16u31
+  rank      : 4 (local_rank: 4)
+  exitcode  : -15 (pid: 486)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 486
+[5]:
+  time      : 2026-04-14_16:34:13
+  host      : j16u31
+  rank      : 5 (local_rank: 5)
+  exitcode  : -15 (pid: 487)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 487
+[6]:
+  time      : 2026-04-14_16:34:13
+  host      : j16u31
+  rank      : 6 (local_rank: 6)
+  exitcode  : -15 (pid: 488)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 488
+[7]:
+  time      : 2026-04-14_16:34:13
+  host      : j16u31
+  rank      : 7 (local_rank: 7)
+  exitcode  : -15 (pid: 489)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 489
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-14_16:34:12
+  host      : j16u31
+  rank      : 3 (local_rank: 3)
+  exitcode  : 2 (pid: 485)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+srun: error: k20u37: task 1: Exited with exit code 1
+srun: error: j16u31: task 0: Exited with exit code 1

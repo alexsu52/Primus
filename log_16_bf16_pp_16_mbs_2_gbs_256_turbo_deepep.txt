@@ -1,0 +1,179 @@
+[2026-03-19 03:57:58] [NODE-?(amd-jump)] [INFO] [main] Loaded config: /home/amd/mbzuai_shared/Primus/prod.yaml
+[2026-03-19 03:57:58] [NODE-?(amd-jump)] [INFO] [main] Would execute: bash /home/amd/mbzuai_shared/Primus/runner/primus-cli-slurm.sh --config /home/amd/mbzuai_shared/Primus/prod.yaml -p mbzuai_training -N 16 --nodelist=g21u01,g21u19,g21u25,h17u07,h18u01,h18u13,h18u19,h18u25,h20u31,j16u01,j16u07,j16u25,j16u37,j16u43,j17u13,j17u31 -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+[2026-03-19 03:57:58] [NODE-?(amd-jump)] [INFO] [main] Executing: bash /home/amd/mbzuai_shared/Primus/runner/primus-cli-slurm.sh --config /home/amd/mbzuai_shared/Primus/prod.yaml -p mbzuai_training -N 16 --nodelist=g21u01,g21u19,g21u25,h17u07,h18u01,h18u13,h18u19,h18u25,h20u31,j16u01,j16u07,j16u25,j16u37,j16u43,j17u13,j17u31 -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+[2026-03-19 03:57:58] [NODE-?(amd-jump)] [INFO] -----------------------------------------------
+[2026-03-19 03:57:58] [NODE-?(amd-jump)] [INFO] primus-cli-slurm.sh
+[2026-03-19 03:57:58] [NODE-?(amd-jump)] [INFO] -----------------------------------------------
+[2026-03-19 03:57:59] [NODE-?(amd-jump)] [INFO] [slurm] Loaded config: /home/amd/mbzuai_shared/Primus/prod.yaml
+[2026-03-19 03:57:59] [NODE-?(amd-jump)] [INFO] [slurm] Executing: srun -t 4:00:00 -p mbzuai_training -N 16 --nodelist=g21u01,g21u19,g21u25,h17u07,h18u01,h18u13,h18u19,h18u25,h20u31,j16u01,j16u07,j16u25,j16u37,j16u43,j17u13,j17u31 /home/amd/mbzuai_shared/Primus/runner/primus-cli-slurm-entry.sh --config /home/amd/mbzuai_shared/Primus/prod.yaml -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+[2026-03-19 03:57:59] [NODE-1(g21u19)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] -----------------------------------------------
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] primus-cli-slurm-entry.sh
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] -----------------------------------------------
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [slurm-entry] Loaded config: /home/amd/mbzuai_shared/Primus/prod.yaml
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [slurm-entry] MASTER_ADDR=g21u01
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [slurm-entry] MASTER_PORT=1234
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [slurm-entry] NNODES=16
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [slurm-entry] NODE_RANK=0
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [slurm-entry] GPUS_PER_NODE=8
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [slurm-entry] NODE_LIST: g21u01 g21u19 g21u25 h17u07 h18u01 h18u13 h18u19 h18u25 h20u31 j16u01 j16u07 j16u25 j16u37 j16u43 j17u13 j17u31
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [slurm-entry] Would execute: bash /home/amd/mbzuai_shared/Primus/runner/primus-cli-container.sh --config /home/amd/mbzuai_shared/Primus/prod.yaml --env MASTER_ADDR=g21u01 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [slurm-entry] Executing command...
+[2026-03-19 03:57:59] [NODE-10(j16u07)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-11(j16u25)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-9(j16u01)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-12(j16u37)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-13(j16u43)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-5(h18u13)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-4(h18u01)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-8(h20u31)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-14(j17u13)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-2(g21u25)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-7(h18u25)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-3(h17u07)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-6(h18u19)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] -----------------------------------------------
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] primus-cli-container.sh
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] -----------------------------------------------
+[2026-03-19 03:57:59] [NODE-15(j17u31)] [INFO] [container] Executing command...
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Loaded config: /home/amd/mbzuai_shared/Primus/prod.yaml
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] CLI: options.env += MASTER_ADDR=g21u01
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] CLI: options.env += MASTER_PORT=1234
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] CLI: options.env += NNODES=16
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] CLI: options.env += NODE_RANK=0
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] CLI: options.env += GPUS_PER_NODE=8
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Validating configuration...
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "170ecfdbeda66362016a4868dd2b42f1944feb61c27d059a6b70807ac0690a39". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Parameter validation passed
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Converting configuration to container options...
+srun: error: j16u37: task 12: Exited with exit code 125
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "9a50dff5c7d2aa23a580e90020583e543d6b8e3ebdf61b338906f7802cff5cee". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "727fa90743922455ade54dd57cc00b0c6e6f3841216de4123f656e623ce509b2". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Final image: alexsu52/tasimage-primus:pr-579-fixed-rdma
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "813a66108e9c5b809dc2d5945d72e556bc251bf1c9ccb0f82155df46786550e0". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added project root volume: /home/amd/mbzuai_shared/Primus
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "755d97137df6def5a96147d9898aa56cc6fc6350f0f5ccfd1c667591ac9f4c12". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "1b4e1fe612dae65d8d4874f9cc17ea53f594a5b0ecf98fdbfc642b4d6d72ac40". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "b47e78b6fa1d98d50db260eb23853404d377fbaefb1b6e7377791b35c5457838". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+srun: error: h17u07: task 3: Exited with exit code 125
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "91ea372b553ba6d8d1b24bbbc0d86178f48331b0e88cd1288c0e1bf1d1f23bc8". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added cumulative: --cap-add SYS_PTRACE
+srun: error: j16u25: task 11: Exited with exit code 125
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "c4e93ccefc0fa519b49d75cfba0949462710d6cc015bdbf5b170bfa61e785426". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "5b7e065013ef038ebe7a471c311d2287691f5ecb3ff287d0202c55c8f7cbe64a". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added cumulative: --cap-add CAP_SYS_ADMIN
+srun: error: j16u01: task 9: Exited with exit code 125
+srun: error: j17u13: task 14: Exited with exit code 125
+srun: error: h18u01: task 4: Exited with exit code 125
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "50cbd320d1a9459e744d3c515f65b27b7f2d26fdfbd5e2b7170f715818c290df". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+srun: error: j16u43: task 13: Exited with exit code 125
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added option: --group-add video
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "3f3e6c7afff05a22e02218645353f8d1c76dfd81064ee178af152902da0b9963". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+srun: error: h18u13: task 5: Exited with exit code 125
+srun: error: h18u19: task 6: Exited with exit code 125
+srun: error: j16u07: task 10: Exited with exit code 125
+srun: error: g21u25: task 2: Exited with exit code 125
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added option (last): --env GPUS_PER_NODE=8
+srun: error: h18u25: task 7: Exited with exit code 125
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "4df62573b3a0dc63975f856389d0fcb424e9a2b71c789132bc04dd2b3faeafb8". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added option: --ipc host
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added option: --security-opt seccomp=unconfined
+srun: error: h20u31: task 8: Exited with exit code 125
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added option: --network host
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added boolean flag: --privileged
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added cumulative: --device /dev/kfd
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "c6b6a0f44a8f7119df2131225579d1f137e15ce2bccd3b41d66412f9b5bc2d48". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added cumulative: --device /dev/dri
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added cumulative: --device /dev/infiniband
+srun: error: j17u31: task 15: Exited with exit code 125
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added option: --name primus-training
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Added option: --shm-size 128G
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Launching container with the following configuration:
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]     Runtime: docker
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]     Image: alexsu52/tasimage-primus:pr-579-fixed-rdma
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]     Container options:
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         -v /home/amd/mbzuai_shared/Primus:/home/amd/mbzuai_shared/Primus
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         --cap-add SYS_PTRACE
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         --cap-add CAP_SYS_ADMIN
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         --group-add video
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         --env GPUS_PER_NODE=8
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         --ipc host
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         --security-opt seccomp=unconfined
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         --network host
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         --privileged
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         --device /dev/kfd
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         --device /dev/dri
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         --device /dev/infiniband
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         --name primus-training
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]         --shm-size 128G
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO]     Args: --config /home/amd/mbzuai_shared/Primus/prod.yaml --env MASTER_ADDR=g21u01 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env HSA_NO_SCRATCH_RECLAIM=1 --env NVTE_CK_USES_BWD_V3=1 --env NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0 --env NCCL_SOCKET_IFNAME=enp159s0np0 --env GLOO_SOCKET_IFNAME=enp159s0np0 --env TP_SOCKET_IFNAME=enp159s0np0 --env NCCL_IB_GID_INDEX=3 --env PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1 --env NVTE_CK_IS_V3_ATOMIC_FP32=1 --env TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600 --env MASTER_ADDR=g21u01 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env PRIMUS_LOG_COLOR=0 --env PRIMUS_LOG_LEVEL=INFO --env PRIMUS_LOG_TIMESTAMP=1 train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Would execute: docker run --rm -v /home/amd/mbzuai_shared/Primus:/home/amd/mbzuai_shared/Primus --cap-add SYS_PTRACE --cap-add CAP_SYS_ADMIN --group-add video --env GPUS_PER_NODE=8 --ipc host --security-opt seccomp=unconfined --network host --privileged --device /dev/kfd --device /dev/dri --device /dev/infiniband --name primus-training --shm-size 128G alexsu52/tasimage-primus:pr-579-fixed-rdma /bin/bash -c     echo [container 0][INFO]: started at $(date +%Y.%m.%d) $(date +%H:%M:%S) &&     [[ -d /home/amd/mbzuai_shared/Primus ]] || { echo '[container 0][ERROR]: Primus not found at /home/amd/mbzuai_shared/Primus' >&2; exit 42; } &&     cd /home/amd/mbzuai_shared/Primus && bash runner/primus-cli-direct.sh "$@" 2>&1 &&     echo [container 0][INFO]: finished at $(date +%Y.%m.%d) $(date +%H:%M:%S) bash --config /home/amd/mbzuai_shared/Primus/prod.yaml --env MASTER_ADDR=g21u01 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env HSA_NO_SCRATCH_RECLAIM=1 --env NVTE_CK_USES_BWD_V3=1 --env NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0 --env NCCL_SOCKET_IFNAME=enp159s0np0 --env GLOO_SOCKET_IFNAME=enp159s0np0 --env TP_SOCKET_IFNAME=enp159s0np0 --env NCCL_IB_GID_INDEX=3 --env PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1 --env NVTE_CK_IS_V3_ATOMIC_FP32=1 --env TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600 --env MASTER_ADDR=g21u01 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env PRIMUS_LOG_COLOR=0 --env PRIMUS_LOG_LEVEL=INFO --env PRIMUS_LOG_TIMESTAMP=1 train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --micro_batch_size 2 --global_batch_size 256 --pipeline_model_parallel_layout "Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L" --use_turbo_deepep true --moe_shared_expert_overlap false
+[2026-03-19 03:57:59] [NODE-0(g21u01)] [INFO] [container] Executing command...
+[container 1][INFO]: started at 2026.03.19 03:57:59
+[2026-03-19 03:57:59] [NODE-?(g21u19)] [INFO] -----------------------------------------------
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "fc8d510b32591c5b00b2f47ecbbf68764007c60347dfeb45341917666abfed53". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-19 03:57:59] [NODE-?(g21u19)] [INFO] primus-cli-direct.sh
+srun: error: g21u01: task 0: Exited with exit code 125
+[2026-03-19 03:57:59] [NODE-?(g21u19)] [INFO] -----------------------------------------------
+[INFO] prepare_experiment.sh: patch args file: /tmp/primus_patch_args.txt
+[DEBUG] CONFIG_FILE: /home/amd/mbzuai_shared/Primus/examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml
+[DEBUG] CONFIG_FILE: /home/amd/mbzuai_shared/Primus/examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml
+[DEBUG] cfg type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer.framework: megatron
+[DEBUG] cfg type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer.framework: megatron
+[INFO] prepare_experiment.sh: framework=megatron script=/home/amd/mbzuai_shared/Primus/runner/helpers/hooks/train/pretrain/megatron/prepare.py
+make: Nothing to be done for 'default'.
+[Primus] candidate_paths: ['/home/amd/mbzuai_shared/Primus/third_party/Megatron-LM']
+[Primus] sys.path.insert: /home/amd/mbzuai_shared/Primus/third_party/Megatron-LM
+extra.backend_path=/home/amd/mbzuai_shared/Primus/third_party/Megatron-LM
+WARNING: AMD GPU device(s) is/are in a low-power state. Check power control/runtime_status
+

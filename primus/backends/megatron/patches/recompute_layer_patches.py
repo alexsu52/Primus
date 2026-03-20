@@ -61,7 +61,7 @@ def patch_custom_recompute_layer_ids(ctx: PatchContext):
 
     import megatron.core.models.bert.bert_model as orig_bert_model
     import megatron.core.models.gpt.gpt_model as orig_gpt_model
-    import megatron.core.models.retro.decoder_attention as orig_decoder_attention
+#    import megatron.core.models.retro.decoder_attention as orig_decoder_attention
     import megatron.core.models.T5.t5_model as orig_t5_model
     import megatron.core.models.vision.clip_vit_model as orig_clip_vit_model
     import megatron.core.models.vision.radio as orig_radio
@@ -87,11 +87,11 @@ def patch_custom_recompute_layer_ids(ctx: PatchContext):
         f"[Patch:megatron.transformer.recompute_layer_ids]   Patched megatron.core.models.gpt.gpt_model.TransformerBlock "
         f"-> {PrimusTransformerBlock.__name__}"
     )
-    orig_decoder_attention.TransformerBlock = PrimusTransformerBlock
-    log_rank_0(
-        f"[Patch:megatron.transformer.recompute_layer_ids]   Patched megatron.core.models.retro.decoder_attention.TransformerBlock "
-        f"-> {PrimusTransformerBlock.__name__}"
-    )
+#    orig_decoder_attention.TransformerBlock = PrimusTransformerBlock
+#    log_rank_0(
+#        f"[Patch:megatron.transformer.recompute_layer_ids]   Patched megatron.core.models.retro.decoder_attention.TransformerBlock "
+#        f"-> {PrimusTransformerBlock.__name__}"
+#    )
     orig_t5_model.TransformerBlock = PrimusTransformerBlock
     log_rank_0(
         f"[Patch:megatron.transformer.recompute_layer_ids]   Patched megatron.core.models.T5.t5_model.TransformerBlock "

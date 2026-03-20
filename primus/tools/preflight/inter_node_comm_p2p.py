@@ -60,6 +60,8 @@ def run_inter_node_comm_p2p(args):
                 i_group * adjacent_nodes * LOCAL_WORLD_SIZE + i_r + LOCAL_WORLD_SIZE,
             ]
             tmp_group = dist.new_group(ranks=group_ranks)
+            if RANK == 0:
+                print(f"p2p group_ranks: {group_ranks}", flush=True)
             if RANK in group_ranks:
                 assert p2p_group is None
                 p2p_group = tmp_group
@@ -73,6 +75,9 @@ def run_inter_node_comm_p2p(args):
     for size in sizes:
         if p2p_group is None:
             break
+
+        if RANK == 0:
+            print(f"size: {size}", flush=True)
 
         tensor = torch.rand(size // 2, dtype=torch.bfloat16, device=device)
         dist.barrier(group=p2p_group, device_ids=[torch.cuda.current_device()])

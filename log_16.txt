@@ -1,0 +1,341 @@
+[2026-03-27 10:48:18] [NODE-?(amd-jump)] [INFO] [main] Loaded config: /home/amd/mbzuai_shared/Primus/prod_fp8.yaml
+[2026-03-27 10:48:18] [NODE-?(amd-jump)] [INFO] [main] Would execute: bash /home/amd/mbzuai_shared/Primus/runner/primus-cli-slurm.sh --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml -p mbzuai_training -N 16 --nodelist=j20u[31,37],j21u[13,25,37],k20u[01,19,25,31,37,43],k21u[07,19,31,37,43] -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:18] [NODE-?(amd-jump)] [INFO] [main] Executing: bash /home/amd/mbzuai_shared/Primus/runner/primus-cli-slurm.sh --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml -p mbzuai_training -N 16 --nodelist=j20u[31,37],j21u[13,25,37],k20u[01,19,25,31,37,43],k21u[07,19,31,37,43] -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:18] [NODE-?(amd-jump)] [INFO] -----------------------------------------------
+[2026-03-27 10:48:18] [NODE-?(amd-jump)] [INFO] primus-cli-slurm.sh
+[2026-03-27 10:48:18] [NODE-?(amd-jump)] [INFO] -----------------------------------------------
+[2026-03-27 10:48:18] [NODE-?(amd-jump)] [INFO] [slurm] Loaded config: /home/amd/mbzuai_shared/Primus/prod_fp8.yaml
+[2026-03-27 10:48:18] [NODE-?(amd-jump)] [INFO] [slurm] Executing: srun -t 4:00:00 -p mbzuai_training -N 16 --nodelist=j20u[31,37],j21u[13,25,37],k20u[01,19,25,31,37,43],k21u[07,19,31,37,43] /home/amd/mbzuai_shared/Primus/runner/primus-cli-slurm-entry.sh --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] -----------------------------------------------
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] primus-cli-slurm-entry.sh
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] -----------------------------------------------
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [slurm-entry] Loaded config: /home/amd/mbzuai_shared/Primus/prod_fp8.yaml
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [slurm-entry] MASTER_ADDR=j20u31
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [slurm-entry] MASTER_PORT=1234
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [slurm-entry] NNODES=16
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [slurm-entry] NODE_RANK=0
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [slurm-entry] GPUS_PER_NODE=8
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [slurm-entry] NODE_LIST: j20u31 j20u37 j21u13 j21u25 j21u37 k20u01 k20u19 k20u25 k20u31 k20u37 k20u43 k21u07 k21u19 k21u31 k21u37 k21u43
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [slurm-entry] Would execute: bash /home/amd/mbzuai_shared/Primus/runner/primus-cli-container.sh --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml --env MASTER_ADDR=j20u31 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [slurm-entry] Executing command...
+[2026-03-27 10:48:18] [NODE-3(j21u25)] [INFO] [container] Executing command...
+PRE_PARSE_ARGS: -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:18] [NODE-1(j20u37)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-2(j21u13)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] -----------------------------------------------
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] primus-cli-container.sh
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] -----------------------------------------------
+[2026-03-27 10:48:18] [NODE-4(j21u37)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Loaded config: /home/amd/mbzuai_shared/Primus/prod_fp8.yaml
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] CLI: options.env += MASTER_ADDR=j20u31
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] CLI: options.env += MASTER_PORT=1234
+[2026-03-27 10:48:18] [NODE-14(k21u37)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] CLI: options.env += NNODES=16
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] CLI: options.env += NODE_RANK=0
+[2026-03-27 10:48:18] [NODE-13(k21u31)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-10(k20u43)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] CLI: options.env += GPUS_PER_NODE=8
+[2026-03-27 10:48:18] [NODE-5(k20u01)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Validating configuration...
+[2026-03-27 10:48:18] [NODE-8(k20u31)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-9(k20u37)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-11(k21u07)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Parameter validation passed
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Converting configuration to container options...
+[2026-03-27 10:48:18] [NODE-12(k21u19)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Final image: alexsu52/tasimage-primus:pr-609-fixed-rdma
+[2026-03-27 10:48:18] [NODE-7(k20u25)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-15(k21u43)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added project root volume: /home/amd/mbzuai_shared/Primus
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added cumulative: --cap-add SYS_PTRACE
+[2026-03-27 10:48:18] [NODE-6(k20u19)] [INFO] [container] Executing command...
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added cumulative: --cap-add CAP_SYS_ADMIN
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added option: --group-add video
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added option (last): --env GPUS_PER_NODE=8
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added option: --ipc host
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added option: --security-opt seccomp=unconfined
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added option: --network host
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added boolean flag: --privileged
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added cumulative: --device /dev/kfd
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added cumulative: --device /dev/dri
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added cumulative: --device /dev/infiniband
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "1a3060d1151a44aa9edf2d88f1d637602a3bc8504280f2be939bc1fcb50770b3". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added option: --name primus-training
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Added option: --shm-size 128G
+srun: error: k21u37: task 14: Exited with exit code 125
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "a92fb4192d65d4cc5a695e517804a52b2e567a31406c5e5ca4dce5b85a9fde70". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Launching container with the following configuration:
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "56a9b6cd661cf7648321552c3fe0293cb332f735a080468f57fb7a2b56fb2d76". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "e271610827e7de35c1e83dcaa5d7064333dafa07eaabc06c9fb941d23df823b2". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]     Runtime: docker
+srun: error: k21u31: task 13: Exited with exit code 125
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]     Image: alexsu52/tasimage-primus:pr-609-fixed-rdma
+srun: error: k20u43: task 10: Exited with exit code 125
+srun: error: k20u01: task 5: Exited with exit code 125
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]     Container options:
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "8bc722ff47d5079b8e9f63db3af81a9c045532efc387ad3752ff35f6540cbadb". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         -v /home/amd/mbzuai_shared/Primus:/home/amd/mbzuai_shared/Primus
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "18bd2c6a63c57cded879298fc82df75b07bf966b8476b920f00a4e942220e754". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "eeb58dff188d7cb4c446123693a17dcd6bde43c1a4a49f067a546a8c98cefeb3". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         --cap-add SYS_PTRACE
+srun: error: k20u37: task 9: Exited with exit code 125
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         --cap-add CAP_SYS_ADMIN
+srun: error: k21u07: task 11: Exited with exit code 125
+srun: error: k21u19: task 12: Exited with exit code 125
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         --group-add video
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "41b7a9e444b0c7bfc8f5748d770a735223b106f35b0c9b0012eb08057e27b12f". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "197b4ac75b3a16eea81df1d3db3a7dd8f54150b07d1c4030837ef3d0818ead08". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         --env GPUS_PER_NODE=8
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         --ipc host
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "4f246f18bae62b804b8cf2370fc8b2ad3d902a177848799b25bf8b305b0852d9". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+srun: error: k20u31: task 8: Exited with exit code 125
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         --security-opt seccomp=unconfined
+srun: error: k20u25: task 7: Exited with exit code 125
+docker: Error response from daemon: Conflict. The container name "/primus-training" is already in use by container "cf8a52067b3340b0e8bc6efc8b121af28aafb2e8ab93334a81facfeb6dbe1625". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         --network host
+srun: error: k21u43: task 15: Exited with exit code 125
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         --privileged
+srun: error: k20u19: task 6: Exited with exit code 125
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         --device /dev/kfd
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         --device /dev/dri
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         --device /dev/infiniband
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         --name primus-training
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]         --shm-size 128G
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO]     Args: --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml --env MASTER_ADDR=j20u31 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env REBUILD_PRIMUS_TURBO=0 --env HSA_NO_SCRATCH_RECLAIM=1 --env NVTE_CK_USES_BWD_V3=1 --env NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0 --env NCCL_SOCKET_IFNAME=enp159s0np0 --env GLOO_SOCKET_IFNAME=enp159s0np0 --env TP_SOCKET_IFNAME=enp159s0np0 --env NCCL_IB_GID_INDEX=3 --env PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1 --env NVTE_CK_IS_V3_ATOMIC_FP32=1 --env TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600 --env GPU_ARCHS=gfx942 --env FIX_AITER_ASM_DIR=1 --env PRIMUS_TURBO_DEEPEP_TIMEOUT=1200 --env TRANSFORMERS_OFFLINE=1 --env HF_DATASETS_OFFLINE=1 --env MASTER_ADDR=j20u31 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env PRIMUS_LOG_COLOR=0 --env PRIMUS_LOG_LEVEL=INFO --env PRIMUS_LOG_TIMESTAMP=1 train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Would execute: docker run --rm -v /home/amd/mbzuai_shared/Primus:/home/amd/mbzuai_shared/Primus --cap-add SYS_PTRACE --cap-add CAP_SYS_ADMIN --group-add video --env GPUS_PER_NODE=8 --ipc host --security-opt seccomp=unconfined --network host --privileged --device /dev/kfd --device /dev/dri --device /dev/infiniband --name primus-training --shm-size 128G alexsu52/tasimage-primus:pr-609-fixed-rdma /bin/bash -c     echo [container 0][INFO]: started at $(date +%Y.%m.%d) $(date +%H:%M:%S) &&     [[ -d /home/amd/mbzuai_shared/Primus ]] || { echo '[container 0][ERROR]: Primus not found at /home/amd/mbzuai_shared/Primus' >&2; exit 42; } &&     cd /home/amd/mbzuai_shared/Primus && bash runner/primus-cli-direct.sh "$@" 2>&1 &&     echo [container 0][INFO]: finished at $(date +%Y.%m.%d) $(date +%H:%M:%S) bash --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml --env MASTER_ADDR=j20u31 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env REBUILD_PRIMUS_TURBO=0 --env HSA_NO_SCRATCH_RECLAIM=1 --env NVTE_CK_USES_BWD_V3=1 --env NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0 --env NCCL_SOCKET_IFNAME=enp159s0np0 --env GLOO_SOCKET_IFNAME=enp159s0np0 --env TP_SOCKET_IFNAME=enp159s0np0 --env NCCL_IB_GID_INDEX=3 --env PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1 --env NVTE_CK_IS_V3_ATOMIC_FP32=1 --env TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600 --env GPU_ARCHS=gfx942 --env FIX_AITER_ASM_DIR=1 --env PRIMUS_TURBO_DEEPEP_TIMEOUT=1200 --env TRANSFORMERS_OFFLINE=1 --env HF_DATASETS_OFFLINE=1 --env MASTER_ADDR=j20u31 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env PRIMUS_LOG_COLOR=0 --env PRIMUS_LOG_LEVEL=INFO --env PRIMUS_LOG_TIMESTAMP=1 train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:18] [NODE-0(j20u31)] [INFO] [container] Executing command...
+[container 1][INFO]: started at 2026.03.27 10:48:18
+[container 3][INFO]: started at 2026.03.27 10:48:18
+[2026-03-27 10:48:18] [NODE-?(j20u37)] [INFO] -----------------------------------------------
+[2026-03-27 10:48:18] [NODE-?(j20u37)] [INFO] primus-cli-direct.sh
+[2026-03-27 10:48:18] [NODE-?(j20u37)] [INFO] -----------------------------------------------
+[2026-03-27 10:48:18] [NODE-?(j21u25)] [INFO] -----------------------------------------------
+[2026-03-27 10:48:18] [NODE-?(j21u25)] [INFO] primus-cli-direct.sh
+[2026-03-27 10:48:18] [NODE-?(j21u25)] [INFO] -----------------------------------------------
+[container 2][INFO]: started at 2026.03.27 10:48:18
+[container 4][INFO]: started at 2026.03.27 10:48:18
+[2026-03-27 10:48:18] [NODE-?(j21u13)] [INFO] -----------------------------------------------
+[2026-03-27 10:48:18] [NODE-?(j21u13)] [INFO] primus-cli-direct.sh
+[2026-03-27 10:48:18] [NODE-?(j21u13)] [INFO] -----------------------------------------------
+[2026-03-27 10:48:18] [NODE-?(j21u37)] [INFO] -----------------------------------------------
+[2026-03-27 10:48:18] [NODE-?(j21u37)] [INFO] primus-cli-direct.sh
+[2026-03-27 10:48:18] [NODE-?(j21u37)] [INFO] -----------------------------------------------
+[container 0][INFO]: started at 2026.03.27 10:48:19
+[2026-03-27 10:48:19] [NODE-?(j20u31)] [INFO] -----------------------------------------------
+[2026-03-27 10:48:19] [NODE-?(j20u31)] [INFO] primus-cli-direct.sh
+[2026-03-27 10:48:19] [NODE-?(j20u31)] [INFO] -----------------------------------------------
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] PRE_PARSE_ARGS (runner options): --env MASTER_ADDR=j20u31 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env REBUILD_PRIMUS_TURBO=0 --env HSA_NO_SCRATCH_RECLAIM=1 --env NVTE_CK_USES_BWD_V3=1 --env NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0 --env NCCL_SOCKET_IFNAME=enp159s0np0 --env GLOO_SOCKET_IFNAME=enp159s0np0 --env TP_SOCKET_IFNAME=enp159s0np0 --env NCCL_IB_GID_INDEX=3 --env PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1 --env NVTE_CK_IS_V3_ATOMIC_FP32=1 --env TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600 --env GPU_ARCHS=gfx942 --env FIX_AITER_ASM_DIR=1 --env PRIMUS_TURBO_DEEPEP_TIMEOUT=1200 --env TRANSFORMERS_OFFLINE=1 --env HF_DATASETS_OFFLINE=1 --env MASTER_ADDR=j20u31 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env PRIMUS_LOG_COLOR=0 --env PRIMUS_LOG_LEVEL=INFO --env PRIMUS_LOG_TIMESTAMP=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] PRIMUS_ARGS (python module args): train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] Combined args for second pass: --env MASTER_ADDR=j20u31 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env REBUILD_PRIMUS_TURBO=0 --env HSA_NO_SCRATCH_RECLAIM=1 --env NVTE_CK_USES_BWD_V3=1 --env NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0 --env NCCL_SOCKET_IFNAME=enp159s0np0 --env GLOO_SOCKET_IFNAME=enp159s0np0 --env TP_SOCKET_IFNAME=enp159s0np0 --env NCCL_IB_GID_INDEX=3 --env PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1 --env NVTE_CK_IS_V3_ATOMIC_FP32=1 --env TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600 --env GPU_ARCHS=gfx942 --env FIX_AITER_ASM_DIR=1 --env PRIMUS_TURBO_DEEPEP_TIMEOUT=1200 --env TRANSFORMERS_OFFLINE=1 --env HF_DATASETS_OFFLINE=1 --env MASTER_ADDR=j20u31 --env MASTER_PORT=1234 --env NNODES=16 --env NODE_RANK=0 --env GPUS_PER_NODE=8 --env PRIMUS_LOG_COLOR=0 --env PRIMUS_LOG_LEVEL=INFO --env PRIMUS_LOG_TIMESTAMP=1 -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] Loaded config: /home/amd/mbzuai_shared/Primus/prod_fp8.yaml
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += MASTER_ADDR=j20u31
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += MASTER_PORT=1234
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += NNODES=16
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += NODE_RANK=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += GPUS_PER_NODE=8
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += REBUILD_PRIMUS_TURBO=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += HSA_NO_SCRATCH_RECLAIM=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += NVTE_CK_USES_BWD_V3=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += NCCL_SOCKET_IFNAME=enp159s0np0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += GLOO_SOCKET_IFNAME=enp159s0np0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += TP_SOCKET_IFNAME=enp159s0np0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += NCCL_IB_GID_INDEX=3
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += NVTE_CK_IS_V3_ATOMIC_FP32=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=600
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += GPU_ARCHS=gfx942
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += FIX_AITER_ASM_DIR=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += PRIMUS_TURBO_DEEPEP_TIMEOUT=1200
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += TRANSFORMERS_OFFLINE=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += HF_DATASETS_OFFLINE=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += MASTER_ADDR=j20u31
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += MASTER_PORT=1234
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += NNODES=16
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += NODE_RANK=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += GPUS_PER_NODE=8
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += PRIMUS_LOG_COLOR=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += PRIMUS_LOG_LEVEL=INFO
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [direct] CLI: env += PRIMUS_LOG_TIMESTAMP=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] ========== Training Cluster Info ==========
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     MASTER_ADDR=j20u31
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     MASTER_PORT=1234
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NNODES=16
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NODE_RANK=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     GPUS_PER_NODE=8
+env.PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND=TURBO
+[2026-03-27 10:48:19] [NODE-1(j20u37)] [INFO] USING_UEP is disabled. PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND set to TURBO
+env.PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND=TURBO
+[2026-03-27 10:48:19] [NODE-3(j21u25)] [INFO] USING_UEP is disabled. PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND set to TURBO
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] ========== Python Path and Data Paths ==========
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     PRIMUS_PATH=/home/amd/mbzuai_shared/Primus
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     DATA_PATH=/home/amd/mbzuai_shared/Primus/data
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     HF_HOME=/home/amd/mbzuai_shared/Primus/data/huggingface
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     PYTHONPATH=/home/amd/mbzuai_shared/Primus:/opt/venv/lib/python3.10/site-packages:
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] ========== NCCL and Network Settings ==========
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     HIP_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+env.PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND=TURBO
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NCCL_DEBUG=<unset>
+[2026-03-27 10:48:19] [NODE-2(j21u13)] [INFO] USING_UEP is disabled. PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND set to TURBO
+env.PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND=TURBO
+[2026-03-27 10:48:19] [NODE-4(j21u37)] [INFO] USING_UEP is disabled. PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND set to TURBO
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NCCL_CHECKS_DISABLE=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NCCL_IB_GID_INDEX=3
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NCCL_CROSS_NIC=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NCCL_IB_HCA=rocep28s0,rocep62s0,rocep79s0,rocep96s0,rocep158s0,rocep190s0,rocep206s0,rocep222s0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     IP_INTERFACE=eno8303
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NCCL_SOCKET_IFNAME=enp159s0np0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     GLOO_SOCKET_IFNAME=enp159s0np0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] ========== RCCL Settings ==========
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     RCCL_MSCCL_ENABLE=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     RCCL_MSCCLPP_ENABLE=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     RCCL_MSCCLPP_FORCE_ENABLE=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     RCCL_MSCCLPP_THRESHOLD=1073741824
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     MSCCLPP_DISABLE_CHANNEL_CACHE=FALSE
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     TORCH_NCCL_USE_TENSOR_REGISTER_ALLOCATOR_HOOK=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] ========== AMD GPU Optimizations ==========
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     HSA_ENABLE_SDMA=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     HSA_NO_SCRATCH_RECLAIM=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] ========== General Performance Tuning ==========
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     GPU_MAX_HW_QUEUES=2
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     ENABLE_NUMA_BINDING=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     CUDA_DEVICE_MAX_CONNECTIONS=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     TORCH_NCCL_HIGH_PRIORITY=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NCCL_PXN_DISABLE=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NCCL_P2P_NET_CHUNKSIZE=524288
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] ========== Transformer Engine Optimizations ==========
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NVTE_USE_CAST_TRANSPOSE_TRITON=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NVTE_USE_OPTIMIZED_HIPIFIED_CAST_TRANSPOSE=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NVTE_CK_USES_BWD_V3=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     PRIMUS_TURBO_ATTN_V3_ATOMIC_FP32=1
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NVTE_DEBUG=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NVTE_DEBUG_LEVEL=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     NVTE_FUSED_ATTN_LOG_CONFIG=0
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO]     PATCH_TE_FLASH_ATTN=0
+
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] === Loading Primus Environment Configuration ===
+[fix_aiter_asm_dir] Patched /opt/venv/lib/python3.10/site-packages/aiter/jit/core.py: AITER_ASM_DIR -> .../hsa/gfx942/
+[fix_aiter_asm_dir] Patched /opt/venv/lib/python3.10/site-packages/aiter/jit/core.py: AITER_ASM_DIR -> .../hsa/gfx942/
+[INFO] prepare_experiment.sh: patch args file: /tmp/primus_patch_args.txt
+[INFO] prepare_experiment.sh: patch args file: /tmp/primus_patch_args.txt
+[fix_aiter_asm_dir] Patched /opt/venv/lib/python3.10/site-packages/aiter/jit/core.py: AITER_ASM_DIR -> .../hsa/gfx942/
+[fix_aiter_asm_dir] Patched /opt/venv/lib/python3.10/site-packages/aiter/jit/core.py: AITER_ASM_DIR -> .../hsa/gfx942/
+[DEBUG] CONFIG_FILE: /home/amd/mbzuai_shared/Primus/examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml
+[DEBUG] CONFIG_FILE: /home/amd/mbzuai_shared/Primus/examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml
+[DEBUG] CONFIG_FILE: /home/amd/mbzuai_shared/Primus/examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml
+[DEBUG] CONFIG_FILE: /home/amd/mbzuai_shared/Primus/examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] Detected GPU model: MI300X
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] Loading GPU-specific configuration: /home/amd/mbzuai_shared/Primus/runner/helpers/envs/MI300X.sh
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] Loading MI300X-specific optimizations...
+
+[INFO] prepare_experiment.sh: patch args file: /tmp/primus_patch_args.txt
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] === Validating Configuration ===
+[INFO] prepare_experiment.sh: patch args file: /tmp/primus_patch_args.txt
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] ✓ Configuration validation passed
+
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] === Environment Configuration Complete ===
+
+[DEBUG] CONFIG_FILE: /home/amd/mbzuai_shared/Primus/examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml
+[DEBUG] CONFIG_FILE: /home/amd/mbzuai_shared/Primus/examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Detected hooks directory: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks
+[DEBUG] CONFIG_FILE: /home/amd/mbzuai_shared/Primus/examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml
+[DEBUG] CONFIG_FILE: /home/amd/mbzuai_shared/Primus/examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/00_rebuild_primus_turbo.sh train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/00_rebuild_primus_turbo.sh finished in 0s
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/01_patch_te_flash_attn_max_version.sh train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/01_patch_te_flash_attn_max_version.sh finished in 0s
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/02_rebuild_bnxt.sh train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[DEBUG] cfg type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer.framework: megatron
+[DEBUG] cfg type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer.framework: megatron
+[DEBUG] cfg type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer.framework: megatron
+[DEBUG] cfg type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer.framework: megatron
+[INFO] prepare_experiment.sh: framework=megatron script=/home/amd/mbzuai_shared/Primus/runner/helpers/hooks/train/pretrain/megatron/prepare.py
+[INFO] prepare_experiment.sh: framework=megatron script=/home/amd/mbzuai_shared/Primus/runner/helpers/hooks/train/pretrain/megatron/prepare.py
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/02_rebuild_bnxt.sh finished in 0s
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/03_detect_nccl_ib_tc.sh train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/03_detect_nccl_ib_tc.sh finished in 0s
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/03_enable_ainic.sh train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/03_enable_ainic.sh finished in 0s
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/04_rebuild_uep.sh train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/04_rebuild_uep.sh finished in 0s
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/05_using_uep.sh train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+env.PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND=TURBO
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] USING_UEP is disabled. PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND set to TURBO
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] exported env from hook: PRIMUS_TURBO_MOE_DISPATCH_COMBINE_BACKEND=TURBO
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/05_using_uep.sh finished in 0s
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/06_fix_aiter_asm_dir.sh train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[DEBUG] cfg type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer.framework: megatron
+[DEBUG] cfg type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer.framework: megatron
+[DEBUG] cfg type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer.framework: megatron
+[DEBUG] cfg type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer.framework: megatron
+[INFO] prepare_experiment.sh: framework=megatron script=/home/amd/mbzuai_shared/Primus/runner/helpers/hooks/train/pretrain/megatron/prepare.py
+[INFO] prepare_experiment.sh: framework=megatron script=/home/amd/mbzuai_shared/Primus/runner/helpers/hooks/train/pretrain/megatron/prepare.py
+[fix_aiter_asm_dir] Patched /opt/venv/lib/python3.10/site-packages/aiter/jit/core.py: AITER_ASM_DIR -> .../hsa/gfx942/
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/06_fix_aiter_asm_dir.sh finished in 0s
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/10_auto_nccl_net.sh train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Hook /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/10_auto_nccl_net.sh finished in 0s
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Detected hooks directory: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/train/pretrain
+[2026-03-27 10:48:19] [NODE-0(j20u31)] [INFO] [Hooks] Executing hook: /home/amd/mbzuai_shared/Primus/runner/helpers/hooks/train/pretrain/prepare_experiment.sh train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml --train_iters 10 --pipeline_model_parallel_size 16 --virtual_pipeline_model_parallel_size 4 --micro_batch_size 1 --global_batch_size 2048 --pipeline_model_parallel_layout "E|(t|)*61|L" --use_turbo_deepep true --moe_shared_expert_overlap false --turbo_deepep_num_cu 80 --use_precision_aware_optimizer True --main_grads_dtype bf16 --main_params_dtype fp16 --exp_avg_dtype bf16 --exp_avg_sq_dtype bf16 --apply_rope_fusion true --turbo_sync_free_moe_stage 1 --recompute_granularity full --recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+[INFO] prepare_experiment.sh: patch args file: /tmp/primus_patch_args.txt
+[DEBUG] CONFIG_FILE: /home/amd/mbzuai_shared/Primus/examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml
+[DEBUG] CONFIG_FILE: /home/amd/mbzuai_shared/Primus/examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain.yaml
+[DEBUG] cfg type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer.framework: megatron
+[DEBUG] cfg type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer type: <class 'types.SimpleNamespace'>
+[DEBUG] pre_trainer.framework: megatron
+[INFO] prepare_experiment.sh: framework=megatron script=/home/amd/mbzuai_shared/Primus/runner/helpers/hooks/train/pretrain/megatron/prepare.py

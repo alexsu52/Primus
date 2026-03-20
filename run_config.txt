@@ -1,0 +1,63 @@
+g21u01 g21u19 g21u25 h17u07 h18u01 h18u13 h18u37 h19u01 h19u07 h19u19 h19u43 h20u31 j16u01 j16u07 j16u25 j16u37
+j16u43 j17u13 j17u31 j17u43 j18u01 j18u31 j18u37 j18u43 j19u13 j19u31 j19u43
+j20u01 j20u37 j21u13 j21u25 j21u37 k20u01 k20u19 k20u25 k20u31 k20u37 k20u43 k21u07 k21u19 k21u31 k21u37 k21u43
+
+g21u[01,19,25],h17u07,h18u[01,13,37],h19u[01,07,19,43],h20u31,j16u[01,07,25,37]
+j16u43,j17u[13,31,43],j18u[01,31,37,43],j19u[13,31,43]
+j20u[01,37],j21u[13,25,37],k20u[01,19,25,31,37,43],k21u[07,19,31,37,43]
+
+srun -p mbzuai_training -N 16 --nodelist=g21u[01,19,25],h17u07,h18u[01,13,37],h19u[01,07,19,43],h20u31,j16u[01,07,25,37] -l sg docker -c "docker ps -q | xargs -r docker stop"
+srun -p mbzuai_training -N 11 --nodelist=j16u43,j17u[13,31,43],j18u[01,31,37,43],j19u[13,31,43] -l sg docker -c "docker ps -q | xargs -r docker stop"
+srun -p mbzuai_training -N 16 --nodelist=j20u[01,37],j21u[13,25,37],k20u[01,19,25,31,37,43],k21u[07,19,31,37,43] -l sg docker -c "docker ps -q | xargs -r docker stop"
+
+./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml slurm -p mbzuai_training \
+-N 16 --nodelist=g21u[01,19,25],h17u07,h18u[01,13,37],h19u[01,07,19,43],h20u31,j16u[01,07,25,37] \
+-- preflight
+./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml slurm -p mbzuai_training \
+-N 11 --nodelist=j16u43,j17u[13,31,43],j18u[01,31,37,43],j19u[13,31,43] \
+-- preflight
+./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml slurm -p mbzuai_training \
+-N 16 --nodelist=j20u[01,37],j21u[13,25,37],k20u[01,19,25,31,37,43],k21u[07,19,31,37,43] \
+-- preflight
+
+
+free:
+k20u01 p16
+k20u19 p16
+l19u25 p17
+l19u37 p17
+
+failed:
+j16u31
+
+32 nodes
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+j16u[01,07,25,37,43],j17u[13,31,43],j18u[01,31,37,43],j19u[13,19,25,31,43],j20u[01,37],j21u[13,25,37],k20u[25,31,37,43],k21u[01,07,19,31,37,43]
+
+srun -p mbzuai_training -N 32 --nodelist=j16u[01,07,25,37,43],j17u[13,31,43],j18u[01,31,37,43],j19u[13,19,25,31,43],j20u[01,37],j21u[13,25,37],k20u[25,31,37,43],k21u[01,07,19,31,37,43] -l sg docker -c "docker ps -q | xargs -r docker stop"
+
+./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml slurm -p mbzuai_training \
+-N 32 --nodelist=j16u[01,07,25,37,43],j17u[13,31,43],j18u[01,31,37,43],j19u[13,19,25,31,43],j20u[01,37],j21u[13,25,37],k20u[25,31,37,43],k21u[01,07,19,31,37,43] \
+-- preflight 2>&1 | tee preflight.txt
+
+
+k16u[01,07,13,25,31,37],k17u[07,19,25,31,37,43],k18u[01,07,13,19,31],k19u[01,07,13,31,37],l16u07,l17u[31,37,43],l18u[01,19,37,43],l19u[01,13]
+
+srun -p mbzuai_training -N 32 --nodelist=k16u[01,07,13,25,31,37],k17u[07,19,25,31,37,43],k18u[01,07,13,19,31],k19u[01,07,13,31,37],l16u07,l17u[31,37,43],l18u[01,19,37,43],l19u[01,13] -l sg docker -c "docker ps -q | xargs -r docker stop"
+
+./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml slurm -p mbzuai_training \
+-N 32 --nodelist=k16u[01,07,13,25,31,37],k17u[07,19,25,31,37,43],k18u[01,07,13,19,31],k19u[01,07,13,31,37],l16u07,l17u[31,37,43],l18u[01,19,37,43],l19u[01,13] \
+-- preflight 2>&1 | tee preflight_1.txt
+
+
+64 nodes
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+j16u[01,07,25,31,37,43],j17u[13,31,43],j18u[01,31,37,43],j19u[13,31,43],j20u[01,37],j21u[13,25,37],k20u[01,19,25,31,37,43],k21u[07,19,31,37,43],k16u[01,07,13,25,31,37],k17u[07,19,25,31,37,43],k18u[01,07,13,19,31],k19u[01,07,13,31,37],l16u07,l17u[31,37,43],l18u[01,19,37,43],l19u[01,13]
+
+srun -p mbzuai_training -N 64 --nodelist=j16u[01,07,25,31,37,43],j17u[13,31,43],j18u[01,31,37,43],j19u[13,31,43],j20u[01,37],j21u[13,25,37],k20u[01,19,25,31,37,43],k21u[07,19,31,37,43],k16u[01,07,13,25,31,37],k17u[07,19,25,31,37,43],k18u[01,07,13,19,31],k19u[01,07,13,31,37],l16u07,l17u[31,37,43],l18u[01,19,37,43],l19u[01,13] -l sg docker -c "docker ps -q | xargs -r docker stop"
+
+./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml slurm -p mbzuai_training \
+-N 64 --nodelist=j16u[01,07,25,31,37,43],j17u[13,31,43],j18u[01,31,37,43],j19u[13,31,43],j20u[01,37],j21u[13,25,37],k20u[01,19,25,31,37,43],k21u[07,19,31,37,43],k16u[01,07,13,25,31,37],k17u[07,19,25,31,37,43],k18u[01,07,13,19,31],k19u[01,07,13,31,37],l16u07,l17u[31,37,43],l18u[01,19,37,43],l19u[01,13] \
+-- preflight --dist-timeout-sec 1800

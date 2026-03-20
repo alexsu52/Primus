@@ -71,6 +71,8 @@ def run_inter_node_comm(args):
                     for r in range(adjacent_nodes * LOCAL_WORLD_SIZE)
                 ]
                 tmp_group = dist.new_group(ranks=group_ranks)
+                if RANK == 0:
+                    print(f"group_ranks: {group_ranks}", flush=True)
                 if RANK in group_ranks:
                     assert adjacent_group is None
                     adjacent_group = tmp_group
@@ -80,6 +82,8 @@ def run_inter_node_comm(args):
             for size in sizes:
                 if adjacent_group is None:
                     break
+                if RANK == 0:
+                    print(f"comm: {comm}, size: {size}", flush=True)
 
                 tensor = torch.rand(size // 2, dtype=torch.bfloat16, device=device)
                 dist.barrier(group=adjacent_group, device_ids=[torch.cuda.current_device()])
