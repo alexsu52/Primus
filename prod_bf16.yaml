@@ -15,7 +15,7 @@ slurm:
   # partition: ""
   nodes: 1
   gpus_per_node: 8
-  time: "4:00:00"
+  time: "24:00:00"
 
 # Container-specific settings
 container:
@@ -26,10 +26,10 @@ container:
   # All keys directly map to CLI arguments (--key value)
   options:
     # Container image
-    image: "alexsu52/rocm-primus:v26.1-fixed-rdma"
+    #image: "alexsu52/rocm-primus:v26.1-fixed-rdma"
     #image: "tasimage/primus:pr-579"
     #image: "alexsu52/tasimage-primus:pr-579-fixed-rdma"
-    #image: "alexsu52/tasimage-primus:pr-609-fixed-rdma"
+    image: "alexsu52/tasimage-primus:pr-609-fixed-rdma"
 
     # Single-value options
     ipc: "host"
@@ -41,6 +41,7 @@ container:
     security-opt: "seccomp=unconfined"
     group-add: "video"
     shm-size: "128G"
+    ulimit: "nofile=1048576:1048576"
 
     # Cumulative options (can be specified multiple times via CLI)
     # Device access (each passed as --device)
@@ -62,9 +63,8 @@ container:
       - "CAP_SYS_ADMIN"
 
     # Volume mounts (each passed as --volume)
-    volume: []
-    # volume:
-    #   - "/data:/data"
+    volume:
+      - "/home/amd:/home/amd"
     #   - "/output:/output"
     #   - "/workspace/Primus"
     #   - "/model_weights:/model_weights:ro"
@@ -97,11 +97,11 @@ container:
       - "GPU_ARCHS=gfx942"
       - "FIX_AITER_ASM_DIR=0"
       - "PRIMUS_TURBO_DEEPEP_TIMEOUT=1200"
+      - "PRIMUS_TURBO_DEEPEP_CPU_TIMEOUT=1200"
       - "TRANSFORMERS_OFFLINE=1"
       - "HF_DATASETS_OFFLINE=1"
+      - "PRIMUS_TOKENIZED_DATA_PATH=/home/amd/datasets/c4_deepseek_subset/c4_deepseek_subset_text_document"
 #      - "NCCL_DEBUG=INFO"
-#      - "NCCL_PXN_DISABLE=0"
-#      - "NCCL_ALGO=RING"
 # Direct mode settings
 direct:
   debug: false

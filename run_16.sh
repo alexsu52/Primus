@@ -116,6 +116,7 @@ set -x
 #--recompute_method block \
 #--recompute_num_layers 1 2>&1 | tee log_16_bf16_pp_16_mbs_1_gbs_2048_turbo_deepep_recompute_1_vpp_4.txt
 
+
 # RuntimeError: Training execution failed: Rank 127, node j16u37, device 7, iteration 1: Unexpected result nan (message='found NaN in local forward loss calculation')
 #./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_bf16.yaml slurm -p mbzuai_training \
 #-N 16 -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml \
@@ -133,25 +134,15 @@ set -x
 #--turbo_sync_free_moe_stage 1 \
 #--recompute_num_layers 2 2>&1 | tee log_16_bf16_pp_16_mbs_1_gbs_2048_turbo_deepep_recompute_2_rope_fusion_sync_moe_1.txt
 
-# RuntimeError: Training execution failed: Rank 127, node j16u37, device 7, iteration 1: Unexpected result nan (message='found NaN in local forward loss calculation')
-#./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_bf16.yaml slurm -p mbzuai_training \
-#-N 16 -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml \
-#--train_iters 10 \
-#--pipeline_model_parallel_size 16 \
-#--micro_batch_size 1 \
-#--global_batch_size 2048 \
-#--pipeline_model_parallel_layout "\"Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L\"" \
-#--use_turbo_deepep true \
-#--moe_shared_expert_overlap false \
-#--recompute_granularity full \
-#--recompute_method block \
-#--turbo_deepep_num_cu 80 \
-#--apply_rope_fusion true \
-#--recompute_num_layers 2 2>&1 | tee log_16_bf16_pp_16_mbs_1_gbs_2048_turbo_deepep_recompute_2_rope_fusion.txt
 
-# RuntimeError: Training execution failed: Rank 127, node j16u37, device 7, iteration 1: Unexpected result nan (message='found NaN in local forward loss calculation')
+#Throughput (TFLOP/s/GPU) - Max: 277.5, Min: 272.1, Avg: 273.62
+#Tokens (tokens/s/GPU) - Max: 799.4, Min: 783.9, Avg: 788.33
+#Time per iteration (ms) - Max: 83603.4, Min: 81985.2, Avg: 83140.93
+#Avg HIP Memory Usage: 109.68 GB (57.13%)
+#Avg ROCm Memory Usage: 112.15 GB (58.42%)
 #./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_bf16.yaml slurm -p mbzuai_training \
-#-N 16 -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml \
+#-N 16 --nodelist=j16u[01,07,25,37,43],j17u[13,31,43],j18u[01,31,37,43],j19u[13,19,25,31] \
+#-- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml \
 #--train_iters 10 \
 #--pipeline_model_parallel_size 16 \
 #--micro_batch_size 1 \
@@ -159,28 +150,249 @@ set -x
 #--pipeline_model_parallel_layout "\"Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L\"" \
 #--use_turbo_deepep true \
 #--moe_shared_expert_overlap false \
+#--turbo_deepep_num_cu 80 \
+#--data_cache_path /home/amd/datasets/c4_deepseek_subset/cache \
+#--turbo_sync_free_moe_stage 1 \
 #--recompute_granularity full \
 #--recompute_method block \
-#--turbo_deepep_num_cu 80 \
-#--turbo_sync_free_moe_stage 1 \
 #--recompute_num_layers 2 2>&1 | tee log_16_bf16_pp_16_mbs_1_gbs_2048_turbo_deepep_recompute_2_sync_moe_1.txt
 
 
+#Throughput (TFLOP/s/GPU) - Max: 285.6, Min: 279.3, Avg: 281.27
+#Tokens (tokens/s/GPU) - Max: 822.8, Min: 804.6, Avg: 810.30
+#Time per iteration (ms) - Max: 81453.7, Min: 79654.7, Avg: 80887.05
+#Avg HIP Memory Usage: 115.96 GB (60.40%)
+#Avg ROCm Memory Usage: 118.42 GB (61.68%)
+#./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_bf16.yaml slurm -p mbzuai_training \
+#-N 16 --nodelist=j19u43,j20u[01,37],j21u[13,25,37],k20u[25,31,37,43],k21u[01,07,19,31,37,43] \
+#-- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml \
+#--train_iters 10 \
+#--pipeline_model_parallel_size 16 \
+#--micro_batch_size 1 \
+#--global_batch_size 2048 \
+#--pipeline_model_parallel_layout "\"Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L\"" \
+#--use_turbo_deepep true \
+#--moe_shared_expert_overlap false \
+#--turbo_deepep_num_cu 80 \
+#--use_precision_aware_optimizer True \
+#--main_grads_dtype bf16 \
+#--main_params_dtype fp16 \
+#--exp_avg_dtype bf16 \
+#--exp_avg_sq_dtype bf16 \
+#--data_cache_path /home/amd/datasets/c4_deepseek_subset/cache16 \
+#--turbo_sync_free_moe_stage 1 \
+#--recompute_granularity full \
+#--recompute_method block \
+#--recompute_num_layers 2 2>&1 | tee log_16_bf16_pp_16_mbs_1_gbs_2048_turbo_deepep_recompute_2_precision_aware_sync_moe_1.txt
+
+
+#Throughput (TFLOP/s/GPU) - Max: 296.3, Min: 288.5, Avg: 291.18
+#Tokens (tokens/s/GPU) - Max: 853.7, Min: 831.1, Avg: 838.85
+#Time per iteration (ms) - Max: 78852.5, Min: 76765.3, Avg: 78135.65
+#Avg HIP Memory Usage: 115.95 GB (60.40%)
+#Avg ROCm Memory Usage: 118.42 GB (61.68%)
+#./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_bf16.yaml slurm -p mbzuai_training \
+#-N 16 --nodelist=k16u[01,07,13,25,31,37],k17u[07,19,25,31,37,43],k18u[01,07,13,19] \
+#-- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml \
+#--train_iters 10 \
+#--pipeline_model_parallel_size 16 \
+#--micro_batch_size 1 \
+#--global_batch_size 2048 \
+#--pipeline_model_parallel_layout "\"Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L\"" \
+#--use_turbo_deepep true \
+#--moe_shared_expert_overlap false \
+#--turbo_deepep_num_cu 80 \
+#--use_precision_aware_optimizer True \
+#--main_grads_dtype bf16 \
+#--main_params_dtype fp16 \
+#--exp_avg_dtype bf16 \
+#--exp_avg_sq_dtype bf16 \
+#--apply_rope_fusion true \
+#--data_cache_path /home/amd/datasets/c4_deepseek_subset/cache32 \
+#--turbo_sync_free_moe_stage 1 \
+#--recompute_granularity full \
+#--recompute_method block \
+#--recompute_num_layers 2 2>&1 | tee log_16_bf16_pp_16_mbs_1_gbs_2048_turbo_deepep_recompute_2_precision_aware_rope_fusion_sync_moe_1.txt
+
+
+#Throughput (TFLOP/s/GPU) - Max: 270.1, Min: 269.0, Avg: 269.55
+#Tokens (tokens/s/GPU) - Max: 778.1, Min: 774.9, Avg: 776.50
+#Time per iteration (ms) - Max: 84573.6, Min: 84220.7, Avg: 84399.43
+#Avg HIP Memory Usage: 86.48 GB (45.05%)
+#Avg ROCm Memory Usage: 90.20 GB (46.98%)
+#./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_bf16.yaml slurm -p mbzuai_training \
+#-N 16 --nodelist=k18u31,k19u[01,07,13,31,37],l16u07,l17u[31,37,43],l18u[01,19,37,43],l19u[01,13] \
+#-- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml \
+#--train_iters 10 \
+#--pipeline_model_parallel_size 16 \
+#--virtual_pipeline_model_parallel_size 2 \
+#--micro_batch_size 1 \
+#--global_batch_size 2048 \
+#--pipeline_model_parallel_layout "\"Et*1|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*1|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*2|t*1,L\"" \
+#--use_turbo_deepep true \
+#--moe_shared_expert_overlap false \
+#--turbo_deepep_num_cu 80 \
+#--use_precision_aware_optimizer True \
+#--main_grads_dtype bf16 \
+#--main_params_dtype fp16 \
+#--exp_avg_dtype bf16 \
+#--exp_avg_sq_dtype bf16 \
+#--apply_rope_fusion true \
+#--data_cache_path /home/amd/datasets/c4_deepseek_subset/cache64 \
+#--turbo_sync_free_moe_stage 1 \
+#--recompute_granularity full \
+#--recompute_method block \
+#--recompute_num_layers 2 2>&1 | tee log_16_bf16_pp_16_mbs_1_gbs_2048_turbo_deepep_recompute_2_vpp_2_precision_aware_rope_fusion_sync_moe_1.txt
+
+
+#Throughput (TFLOP/s/GPU) - Max: 274.2, Min: 267.8, Avg: 270.18
+#Tokens (tokens/s/GPU) - Max: 789.9, Min: 771.6, Avg: 778.40
+#Time per iteration (ms) - Max: 84932.0, Min: 82964.5, Avg: 84199.12
+#Avg HIP Memory Usage: 116.81 GB (60.84%)
+#Avg ROCm Memory Usage: 119.29 GB (62.14%)
+#./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_bf16.yaml slurm -p mbzuai_training \
+#-N 16 --nodelist=k18u31,k19u[01,07,13,31,37],l16u07,l17u[31,37,43],l18u[01,19,37,43],l19u[01,13] \
+#-- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml \
+#--train_iters 10 \
+#--pipeline_model_parallel_size 16 \
+#--micro_batch_size 1 \
+#--global_batch_size 2048 \
+#--pipeline_model_parallel_layout "\"Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L\"" \
+#--use_turbo_deepep true \
+#--moe_shared_expert_overlap false \
+#--turbo_deepep_num_cu 80 \
+#--use_precision_aware_optimizer True \
+#--main_grads_dtype bf16 \
+#--main_params_dtype fp16 \
+#--exp_avg_dtype bf16 \
+#--exp_avg_sq_dtype bf16 \
+#--apply_rope_fusion true \
+#--data_cache_path /home/amd/datasets/c4_deepseek_subset/cache64 \
+#--turbo_sync_free_moe_stage 1 \
+#--recompute_granularity full \
+#--recompute_layer_ids 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 \
+#2>&1 | tee log_16_bf16_pp_16_mbs_1_gbs_2048_turbo_deepep_recompute_32_precision_aware_rope_fusion_sync_moe_1.txt
+
+
+#Throughput (TFLOP/s/GPU) - Max: 294.5, Min: 289.6, Avg: 291.80
+#Tokens (tokens/s/GPU) - Max: 848.5, Min: 834.3, Avg: 840.62
+#Time per iteration (ms) - Max: 78556.6, Min: 77241.1, Avg: 77967.07
+#Avg HIP Memory Usage: 116.81 GB (60.84%)
+#Avg ROCm Memory Usage: 119.29 GB (62.14%)
+#./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_bf16.yaml slurm -p mbzuai_training \
+#-N 16 --nodelist=k16u[01,07,13,25,31,37],k17u[07,19,25,31,37,43],k18u[01,07,13,19] \
+#-- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml \
+#--train_iters 10 \
+#--pipeline_model_parallel_size 16 \
+#--micro_batch_size 1 \
+#--global_batch_size 2048 \
+#--pipeline_model_parallel_layout "\"Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L\"" \
+#--use_turbo_deepep true \
+#--moe_shared_expert_overlap false \
+#--turbo_deepep_num_cu 80 \
+#--use_precision_aware_optimizer True \
+#--main_grads_dtype bf16 \
+#--main_params_dtype fp16 \
+#--exp_avg_dtype bf16 \
+#--exp_avg_sq_dtype bf16 \
+#--apply_rope_fusion true \
+#--data_cache_path /home/amd/datasets/c4_deepseek_subset/cache32 \
+#--turbo_sync_free_moe_stage 1 \
+#--recompute_granularity full \
+#--recompute_layer_ids 4,5,8,9,12,13,16,17,20,21,24,25,28,29,32,36 \
+#2>&1 | tee log_16_bf16_pp_16_mbs_1_gbs_2048_turbo_deepep_recompute_16_precision_aware_rope_fusion_sync_moe_1.txt
+
+
+# Runtime error: OOM
+#./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_bf16.yaml slurm -p mbzuai_training \
+#-N 16 --nodelist=k18u31,k19u[01,07,13,31,37],l16u07,l17u[31,37,43],l18u[01,19,37,43],l19u[01,13] \
+#-- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain_recompute_modules_moe.yaml \
+#--train_iters 10 \
+#--pipeline_model_parallel_size 16 \
+#--micro_batch_size 1 \
+#--global_batch_size 2048 \
+#--pipeline_model_parallel_layout "\"Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L\"" \
+#--use_turbo_deepep true \
+#--moe_shared_expert_overlap false \
+#--turbo_deepep_num_cu 80 \
+#--use_precision_aware_optimizer True \
+#--main_grads_dtype bf16 \
+#--main_params_dtype fp16 \
+#--exp_avg_dtype bf16 \
+#--exp_avg_sq_dtype bf16 \
+#--apply_rope_fusion true \
+#--data_cache_path /home/amd/datasets/c4_deepseek_subset/cache64 \
+#--turbo_sync_free_moe_stage 1 \
+#2>&1 | tee log_16_bf16_pp_16_mbs_1_gbs_2048_turbo_deepep_recompute_selective_moe_precision_aware_rope_fusion_sync_moe_1.txt
+
 ./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_bf16.yaml slurm -p mbzuai_training \
--N 16 -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml \
+-N 16 --nodelist=k18u31,k19u[01,07,13,31,37],l16u07,l17u[31,37,43],l18u[01,19,37,43],l19u[01,13] \
+-- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml \
 --train_iters 10 \
---pipeline_model_parallel_size 16 \
+--pipeline_model_parallel_size 8 \
 --micro_batch_size 1 \
 --global_batch_size 2048 \
+--pipeline_model_parallel_layout "\"Et*7|t*7|t*8|t*8|t*8|t*8|t*8|t*7L\"" \
+--use_turbo_deepep true \
+--moe_shared_expert_overlap false \
+--turbo_deepep_num_cu 80 \
+--use_precision_aware_optimizer True \
+--main_grads_dtype bf16 \
+--main_params_dtype fp16 \
+--exp_avg_dtype bf16 \
+--exp_avg_sq_dtype bf16 \
+--apply_rope_fusion true \
+--data_cache_path /home/amd/datasets/c4_deepseek_subset/cache64 \
+--turbo_sync_free_moe_stage 1 \
+--recompute_granularity full \
+--recompute_method block \
+--recompute_num_layers 4 2>&1 | tee log_16_bf16_pp_8_mbs_1_gbs_2048_turbo_deepep_recompute_4_precision_aware_rope_fusion_sync_moe_1.txt
+
+./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_bf16.yaml slurm -p mbzuai_training \
+-N 16 --nodelist=k16u[01,07,13,25,31,37],k17u[07,19,25,31,37,43],k18u[01,07,13,19] \
+-- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml \
+--train_iters 10 \
+--pipeline_model_parallel_size 8 \
+--micro_batch_size 1 \
+--global_batch_size 2048 \
+--pipeline_model_parallel_layout "\"Et*7|t*7|t*8|t*8|t*8|t*8|t*8|t*7L\"" \
+--use_turbo_deepep true \
+--moe_shared_expert_overlap false \
+--turbo_deepep_num_cu 80 \
+--use_precision_aware_optimizer True \
+--main_grads_dtype bf16 \
+--main_params_dtype fp16 \
+--exp_avg_dtype bf16 \
+--exp_avg_sq_dtype bf16 \
+--apply_rope_fusion true \
+--data_cache_path /home/amd/datasets/c4_deepseek_subset/cache32 \
+--turbo_sync_free_moe_stage 1 \
+--recompute_granularity full \
+--recompute_method block \
+--recompute_num_layers 8 2>&1 | tee log_16_bf16_pp_8_mbs_1_gbs_2048_turbo_deepep_recompute_8_precision_aware_rope_fusion_sync_moe_1.txt
+
+./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_bf16.yaml slurm -p mbzuai_training \
+-N 16 --nodelist=k16u[01,07,13,25,31,37],k17u[07,19,25,31,37,43],k18u[01,07,13,19] \
+-- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-BF16-pretrain.yaml \
+--train_iters 250 \
+--pipeline_model_parallel_size 16 \
+--micro_batch_size 1 \
+--global_batch_size 4096 \
 --pipeline_model_parallel_layout "\"Et*3|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*4|t*3|t*3L\"" \
 --use_turbo_deepep true \
 --moe_shared_expert_overlap false \
---recompute_granularity full \
---recompute_method block \
+--turbo_deepep_num_cu 80 \
+--use_precision_aware_optimizer True \
+--main_grads_dtype bf16 \
+--main_params_dtype fp16 \
+--exp_avg_dtype bf16 \
+--exp_avg_sq_dtype bf16 \
 --apply_rope_fusion true \
+--data_cache_path /home/amd/datasets/c4_deepseek_subset/cache32 \
 --turbo_sync_free_moe_stage 1 \
---recompute_num_layers 2 2>&1 | tee log_16_bf16_pp_16_mbs_1_gbs_2048_turbo_deepep_recompute_2_rope_fusion_sync_moe_1.txt
-
+--recompute_granularity full \
+--recompute_layer_ids 4,5,8,9,12,13,16,17,20,21,24,25,28,29,32,36 \
+2>&1 | tee log_16_bf16_pp_16_mbs_1_gbs_4096_turbo_deepep_recompute_16_precision_aware_rope_fusion_sync_moe_1_250_iters.txt
 
 #--------------------------------------------------------------------------------------------------------------------------------------
 # FP8
@@ -1118,7 +1330,12 @@ set -x
 #--apply_rope_fusion true \
 #--turbo_sync_free_moe_stage 1 2>&1 | tee log_16_fp8_pp_16_mbs_1_gbs_4096_turbo_deepep_recompute_selective_mlp_moe_vpp_4_precision_aware_rope_fusion_sync_moe_1.txt
 
-
+#Excluding first and last 3 iterations from final calculations.
+#Throughput (TFLOP/s/GPU) - Max: 358.0, Min: 205.0, Avg: 337.86
+#Tokens (tokens/s/GPU) - Max: 1031.3, Min: 590.7, Avg: 973.38
+#Time per iteration (ms) - Max: 221886.7, Min: 127094.6, Avg: 135068.54
+#Avg HIP Memory Usage: 148.89 GB (77.55%)
+#Avg ROCm Memory Usage: 152.59 GB (79.48%)
 ./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml slurm -p mbzuai_training \
 -N 16 --nodelist=j20u[01,37],j21u[13,25,37],k20u[01,19,25,31,37,43],k21u[07,19,31,37,43] \
 -- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain_recompute_modules_mlp_moe.yaml \
@@ -1138,3 +1355,25 @@ set -x
 --exp_avg_sq_dtype bf16 \
 --apply_rope_fusion true \
 --turbo_sync_free_moe_stage 1 2>&1 | tee log_16_fp8_pp_16_mbs_1_gbs_4096_turbo_deepep_recompute_selective_mlp_moe_vpp_4_precision_aware_rope_fusion_sync_moe_1_250_iters.txt
+
+
+./primus-cli --config /home/amd/mbzuai_shared/Primus/prod_fp8.yaml slurm -p mbzuai_training \
+-N 16 --nodelist=k16u[01,07,13,25,31,37],k17u[07,19,25,31,37,43],k18u[01,07,13,19] \
+-- train pretrain --config examples/megatron/configs/MI300X/deepseek_v3-FP8-pretrain_recompute_modules_moe.yaml \
+--train_iters 250 \
+--pipeline_model_parallel_size 16 \
+--virtual_pipeline_model_parallel_size 4 \
+--micro_batch_size 1 \
+--global_batch_size 4096 \
+--pipeline_model_parallel_layout "\"E|(t|)*61|L\"" \
+--use_turbo_deepep true \
+--moe_shared_expert_overlap false \
+--turbo_deepep_num_cu 80 \
+--use_precision_aware_optimizer True \
+--main_grads_dtype bf16 \
+--main_params_dtype fp16 \
+--exp_avg_dtype bf16 \
+--exp_avg_sq_dtype bf16 \
+--apply_rope_fusion true \
+--data_cache_path /home/amd/datasets/c4_deepseek_subset/cache16 \
+--turbo_sync_free_moe_stage 1 2>&1 | tee log_16_fp8_pp_16_mbs_1_gbs_4096_turbo_deepep_recompute_selective_moe_vpp_4_precision_aware_rope_fusion_sync_moe_1_250_iters.txt
